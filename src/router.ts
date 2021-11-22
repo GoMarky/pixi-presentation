@@ -24,6 +24,11 @@ export default new Router({
       path: '/casino-game',
       name: 'PixiCasinoGame',
       component: () => import(/* webpackChunkName: "casino-game" */ './views/pixi-casino-game.vue')
+    },
+    {
+      path: '/base-64',
+      name: 'PixiBase64',
+      component: () => import(/* webpackChunkName: "casino-game" */ './views/pixi-casino-game.vue')
     }
   ]
 })
