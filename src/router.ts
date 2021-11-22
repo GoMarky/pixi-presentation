@@ -1,23 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/texture',
+      name: 'PixiTexture',
+      component: () => import(/* webpackChunkName: "texture" */ './views/pixi-texture.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/container',
+      name: 'PixiContainer',
+      component: () => import(/* webpackChunkName: "container" */ './views/pixi-container.vue')
+    },
+    {
+      path: '/graphics',
+      name: 'PixiGraphics',
+      component: () => import(/* webpackChunkName: "graphics" */ './views/pixi-graphics.vue')
+    },
+    {
+      path: '/casino-game',
+      name: 'PixiCasinoGame',
+      component: () => import(/* webpackChunkName: "casino-game" */ './views/pixi-casino-game.vue')
     }
   ]
 })
