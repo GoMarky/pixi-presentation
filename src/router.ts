@@ -21,6 +21,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "graphics" */ './views/pixi-graphics.vue')
     },
     {
+      path: '/sprite',
+      name: 'PixiSprite',
+      component: () => import(/* webpackChunkName: "sprite" */ './views/pixi-sprite.vue')
+    },
+    {
       path: '/casino-game',
       name: 'PixiCasinoGame',
       component: () => import(/* webpackChunkName: "casino-game" */ './views/pixi-casino-game.vue')
@@ -28,7 +33,7 @@ export default new Router({
     {
       path: '/base-64',
       name: 'PixiBase64',
-      component: () => import(/* webpackChunkName: "casino-game" */ './views/pixi-casino-game.vue')
+      component: () => import(/* webpackChunkName: "base64" */ './views/pixi-base64.vue')
     }
   ]
 })

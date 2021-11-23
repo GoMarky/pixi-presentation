@@ -4,4 +4,8 @@ export class PixiContainerExample extends PixiCoreApp {
   constructor() {
     super();
   }
+
+  public async init(){
+    //
+  }
 }
