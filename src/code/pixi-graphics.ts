@@ -41,13 +41,43 @@ export class PixiGraphicsExample extends PixiCoreApp {
     rect.interactive = true;
     rect.buttonMode = true;
 
-    const drawRectangle = () => {
+    let startX = 0;
+    let startY = 0;
+
+    const drawRectangleMove = (event: PIXI.InteractionEvent) => {
+      const { x, y } = event.data.global;
+
+      // Меняем значение у PIXI.Rectangle, чтобы отрисовать квадрат уже по новым координатам.
+      area.x = x;
+      area.y = y;
+
+      rect.clear();
+      rect
+        .beginFill(getRandomColor())
+        .drawRect(area.left, area.top, area.width, area.height)
+        .endFill();
+    };
+
+    const onPointerUp = () => {
+      rect.off('pointermove', drawRectangleMove);
+      rect.off('pointerup', onPointerUp);
+    };
+
+    const drawRectangle = (event: PIXI.InteractionEvent) => {
+      const { x, y } = event.data.global;
+
+      startX = x;
+      startY = y;
+
       // Очищаем фигуру (Внимание: очищается только фигура, а не весь Canvas)
       rect.clear();
       rect
         .beginFill(getRandomColor())
         .drawRect(area.left, area.top, area.width, area.height)
         .endFill();
+
+      rect.on('pointermove', drawRectangleMove);
+      rect.on('pointerup', onPointerUp);
     };
 
     rect.on('pointerdown', drawRectangle);
