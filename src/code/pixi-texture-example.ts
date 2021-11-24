@@ -32,6 +32,8 @@ export class PixiTextureExample extends PixiCoreApp {
       multisample: PIXI.MSAA_QUALITY.NONE // Даже не передается цвет, а только лишь позиции пикселей, если хотим хорошо сохранить текстуру, то PIXI.MSAA_QUALITY.HIGH
     });
     const sprite = new PIXI.Sprite(texture);
+    sprite.x = 150;
+    sprite.y = 350;
 
     this.container.addChild(sprite);
   }
