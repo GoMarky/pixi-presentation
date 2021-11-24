@@ -41,7 +41,7 @@ export class PixiGraphicsExample extends PixiCoreApp {
     rect.interactive = true;
     rect.buttonMode = true;
 
-    const drawRect = () => {
+    const drawRectangle = () => {
       // Очищаем фигуру (Внимание: очищается только фигура, а не весь Canvas)
       rect.clear();
       rect
@@ -50,13 +50,14 @@ export class PixiGraphicsExample extends PixiCoreApp {
         .endFill();
     };
 
-    rect.on('pointerdown', drawRect);
+    rect.on('pointerdown', drawRectangle);
 
     this.container.addChild(rect);
     this.core.stage.addChild(this.container);
   }
 
   private drawPoly(): void {
+    // Аналог PIXI.Rectangle
     const area = new PIXI.Polygon(100, 100, 200, 200, 300, 300, 350, 370, 450, 321, 332, 678);
 
     /**

@@ -26,6 +26,7 @@ export default Vue.extend({
 
     await app.init();
 
+    app.core.view.oncontextmenu = () => false;
     canvasWrapperElement.appendChild(app.core.view);
   }
 });

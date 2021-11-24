@@ -75,6 +75,8 @@ export default Vue.extend({
         // Мы можем его самостоятельно прокидывать, если он уже есть на странице, через параметр { view: canvasElement }
         // Либо использовать тот, который создает PIXI.
         canvasWrapperElement.appendChild(app.core.view);
+
+        app.core.view.oncontextmenu = () => false;
       } catch (error) {
         this.isLoading = false;
         this.isError = true;

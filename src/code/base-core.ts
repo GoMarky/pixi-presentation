@@ -4,7 +4,9 @@ export abstract class PixiCoreApp {
   private readonly _core: PIXI.Application;
 
   protected constructor() {
-    this._core = new PIXI.Application();
+    // Выставляем разрешение сцены (берем текущее значение ретины)
+    // И включаем сглаживание, к черту эти лесенки.
+    this._core = new PIXI.Application({ resolution: 1, antialias: true, backgroundColor: 0xcecece });
   }
 
   public get core() {

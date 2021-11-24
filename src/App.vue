@@ -4,9 +4,7 @@
       <router-link :to="{ name: 'PixiCasinoGame' }"> CASINO GAME </router-link> |
       <router-link :to="{ name: 'PixiContainer' }"> CONTAINER </router-link> |
       <router-link :to="{ name: 'PixiGraphics' }"> GRAPHICS </router-link> |
-      <router-link :to="{ name: 'PixiSprite' }"> SPRITE </router-link> |
-      <router-link :to="{ name: 'PixiTexture' }"> TEXTURE </router-link> |
-      <router-link :to="{ name: 'PixiBase64' }"> BASE64 </router-link>
+      <router-link :to="{ name: 'PixiTexture' }"> TEXTURE </router-link>
     </div>
     <router-view/>
   </div>
@@ -35,5 +33,10 @@
   width: 1280px;
   height: 720px;
   margin: 0 auto;
+}
+
+canvas {
+  width: 1280px;
+  height: 720px;
 }
 </style>
