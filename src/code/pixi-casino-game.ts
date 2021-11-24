@@ -128,7 +128,7 @@ export class PixiCasinoGame extends PixiCoreApp {
     ] as PIXI.LoaderResource[];
 
     const sound = new CasinoSound();
-    sound.intro.play({ loop: false, volume: 0.2 });
+    sound.intro.play({ loop: false, volume: 0.1 });
 
     const cardBlock = new CasinoCards(cardTextures, sound);
 
